@@ -7,7 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FilhoComponent implements OnInit {
 
-  @Input() nomeFilho:string;
+  private _nome = '';
+
+  @Input()
+  set nome(nome:string){
+    this._nome = (nome && nome.trim()) || '<Nome em branco>';
+  }
+
+  get nome(): string {return this._nome;}
 
   constructor() { }
 

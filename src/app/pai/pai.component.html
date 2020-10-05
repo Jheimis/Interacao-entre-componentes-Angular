@@ -1,2 +1,2 @@
 <p>Componente pai</p>
-<app-filho [nomeFilho]="nomePai"></app-filho>
+<app-filho *ngFor="let nome of nomes" [nome]="nome"></app-filho>
