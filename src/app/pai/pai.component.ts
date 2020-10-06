@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { FilhoComponent } from '../filho/filho.component';
 
 @Component({
   selector: 'app-pai',
@@ -7,12 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PaiComponent implements OnInit {
 
-  paises = ['Brasil', 'Estados Unidos', 'Japão', 'Israel'];
+  @ViewChild(FilhoComponent, {static: false})
 
-  @Input() votado: string = "";
+  private filhoComponent: FilhoComponent;    
+  
+  nome: string;
 
-  onVoted(votado: string) {
-    this.votado = votado;
+  ngAfterContentInit(){
+   
+    setTimeout(() => this.nome = this.filhoComponent.nome, 0);
+    
   }
 
   constructor() { }

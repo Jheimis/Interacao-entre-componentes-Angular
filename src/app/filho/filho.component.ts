@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
 })
 export class FilhoComponent implements OnInit {
 
-  nome = 'Clark Kent';
+  nome = 'Eduardo';
 
   constructor() { }
 
